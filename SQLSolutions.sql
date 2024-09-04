@@ -92,5 +92,15 @@ FROM Production.Product
 SELECT DATEDIFF(day, OrderDate, ShipDate), OrderDate, ShipDate
 FROM Sales.SalesOrderHeader
 --
-SELECT DATE(OrderDate), ShipDate
+SELECT CAST(OrderDate AS DATE), ShipDate
 FROM Sales.SalesOrderHeader
+--
+SELECT OrderDate, DATEADD(MONTH, 6, OrderDate), SalesOrderID, OrderDate
+FROM Sales.SalesOrderHeader
+--
+SELECT YEAR(OrderDate), MONTH(OrderDate)
+FROM Sales.SalesOrderHeader
+--
+SELECT YEAR(OrderDate), DATENAME(MONTH, OrderDate)
+FROM Sales.SalesOrderHeader
+--
